@@ -1,0 +1,21 @@
+# importing csv
+import csv
+
+# reading the file
+with open('filename.csv', 'r') as csv_file :
+	csv_reader = csv.reader(csv_file, delimiter = ',')
+	next(csv_reader) # skipping the first line
+	for line in csv_reader :
+		print(line)
+
+# reading the file using dictionaries
+with open('filename.csv', 'r') as csv_file :
+	csv_reader = csv.DictReader(csv_file, delimiter = ',')
+	for line in csv_reader :
+		print(line)
+
+# writing the file
+with open('new_filename.csv', 'w') as new_file :
+	csv_writer = csv.writer(new_file, delimiter = '-') # delimiter is changed to '-'
+	for line in csv_reader :
+		csv_writer.writerow(line)
