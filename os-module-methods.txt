@@ -1,0 +1,43 @@
+# importing os, not needed to be installed explicitly
+import os
+
+# all the attributes & methods of os
+print(dir(os))
+print(dir(os.path))
+
+# get current directory
+print(os.getcwd())
+
+# change directory
+os.chdir('path of the new folder')
+
+# list of all files & folders in current directory
+os.listdir()
+os.listdir('path')
+
+# create directory
+os.mkdir('directory name')
+os.makedirs('directory name')
+# if you want to create directory a few levels deep, then makedirs will create the intermediate directories for you
+
+# delete file or folder
+os.rmdir('file path')
+os.removedirs('file path')
+
+# renaming file or folder
+os.rename('original file name', 'new file name')
+
+# information about a particular file
+print(os.stat('file name'))
+
+# if we want to see the entire directory tree and files within our current directory
+for dirpath, dirnames, filenames in os.walk('path') :
+	print('Current Path', dirpath)
+	print('Current Path's folder names', dirnames)
+	print('Current Path's file names', filenames)
+
+# concatenationg file path
+os.path.join('path1', 'path2')
+
+# checking if a file exists or not
+os.path.exists('filename')
